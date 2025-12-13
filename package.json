@@ -1,0 +1,21 @@
+{
+  "name": "skills-discovery",
+  "module": "src/index.js",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "bun run src/index.js",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "ink-testing-library": "^4.0.0"
+  },
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "clipboardy": "^5.0.2",
+    "ink": "^6.5.1",
+    "ink-select-input": "^6.2.0",
+    "react": "^19.2.3"
+  }
+}

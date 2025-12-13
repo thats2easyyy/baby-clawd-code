@@ -1,0 +1,37 @@
+[
+  {
+    "handle": "SawyerHood",
+    "name": "Sawyer Hood",
+    "github": "https://github.com/SawyerHood",
+    "bio": "Software engineer exploring weird ways to interact with LLMs. Building experiments in public.",
+    "skills": ["dev-browser"]
+  },
+  {
+    "handle": "wshobson",
+    "name": "Seth Hobson",
+    "github": "https://github.com/wshobson",
+    "bio": "15+ years building data-driven apps at the intersection of finance, tech, and AI. Former Apple, Kuali.",
+    "skills": ["python-development", "kubernetes-operations", "cloud-infrastructure", "security-scanning", "full-stack-orchestration"]
+  },
+  {
+    "handle": "jeremylongshore",
+    "name": "Jeremy Longshore",
+    "github": "https://github.com/jeremylongshore",
+    "bio": "Maintainer of the largest Claude Code plugin marketplace. 240+ agent skills.",
+    "skills": ["devops-automation-pack", "git-commit-smart", "domain-memory-agent"]
+  },
+  {
+    "handle": "obra",
+    "name": "Jesse Vincent",
+    "github": "https://github.com/obra",
+    "bio": "Creator of superpowers-marketplace. Battle-tested skills for TDD, debugging, collaboration.",
+    "skills": ["superpowers", "superpowers-lab"]
+  },
+  {
+    "handle": "anthropic",
+    "name": "Anthropic",
+    "github": "https://github.com/anthropics",
+    "bio": "Official Anthropic skills for document creation and Claude Code development.",
+    "skills": ["docx", "pdf", "pptx", "xlsx", "mcp-builder", "skill-creator"]
+  }
+]

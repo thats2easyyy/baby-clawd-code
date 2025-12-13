@@ -1,0 +1,82 @@
+[
+  {
+    "name": "dev-browser",
+    "creator": "SawyerHood",
+    "category": "Browser & Testing",
+    "description": "Browser automation plugin that lets Claude control your web browser. Test and verify as you develop.",
+    "installs": 730,
+    "installCommand": "/plugin marketplace add SawyerHood/dev-browser"
+  },
+  {
+    "name": "python-development",
+    "creator": "wshobson",
+    "category": "Development",
+    "description": "Python development with 3 specialized agents and 5 skills. Scaffolding, async patterns, testing.",
+    "installs": 412,
+    "installCommand": "/plugin install python-development@wshobson/agents"
+  },
+  {
+    "name": "kubernetes-operations",
+    "creator": "wshobson",
+    "category": "DevOps",
+    "description": "K8s architect agent with 4 deployment skills. Production-grade Helm charts and GitOps.",
+    "installs": 289,
+    "installCommand": "/plugin install kubernetes-operations@wshobson/agents"
+  },
+  {
+    "name": "skill-creator",
+    "creator": "anthropic",
+    "category": "Meta",
+    "description": "Interactive guide for creating new skills. Claude asks about your workflow and generates the structure.",
+    "installs": 1024,
+    "installCommand": "/plugin install skill-creator@anthropics/skills"
+  },
+  {
+    "name": "mcp-builder",
+    "creator": "anthropic",
+    "category": "Development",
+    "description": "Guide for creating MCP servers to integrate external APIs and services with Claude Code.",
+    "installs": 876,
+    "installCommand": "/plugin install mcp-builder@anthropics/skills"
+  },
+  {
+    "name": "devops-automation-pack",
+    "creator": "jeremylongshore",
+    "category": "DevOps",
+    "description": "Complete DevOps toolkit with CI/CD, deployment automation, and infrastructure management.",
+    "installs": 534,
+    "installCommand": "/plugin install devops-automation-pack@claude-code-plugins-plus"
+  },
+  {
+    "name": "superpowers",
+    "creator": "obra",
+    "category": "Workflow",
+    "description": "20+ battle-tested skills including TDD, debugging, and collaboration patterns. /brainstorm, /write-plan, /execute-plan.",
+    "installs": 445,
+    "installCommand": "/plugin marketplace add obra/superpowers-marketplace"
+  },
+  {
+    "name": "webapp-testing",
+    "creator": "anthropic",
+    "category": "Browser & Testing",
+    "description": "Test local web applications using Playwright for UI verification and debugging.",
+    "installs": 612,
+    "installCommand": "/plugin install webapp-testing@anthropics/skills"
+  },
+  {
+    "name": "docx",
+    "creator": "anthropic",
+    "category": "Documents",
+    "description": "Create, edit, and analyze Word documents with tracked changes, comments, and formatting.",
+    "installs": 2341,
+    "installCommand": "/plugin install document-skills@anthropics/skills"
+  },
+  {
+    "name": "git-commit-smart",
+    "creator": "jeremylongshore",
+    "category": "Workflow",
+    "description": "Never write commit messages again. AI-powered conventional commits with context awareness.",
+    "installs": 389,
+    "installCommand": "/plugin install git-commit-smart@claude-code-plugins-plus"
+  }
+]
