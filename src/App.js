@@ -393,7 +393,7 @@ const App = () => {
 
   return (
     <Box flexDirection="column">
-      <InputField value={inputValue} />
+      <InputField value={inputValue} placeholder="Type /skills to get started" />
       {renderContent()}
       <NavHints mode={getHintMode()} />
       {showExitHint && (
