@@ -8,7 +8,14 @@
       "Bash(bun:*)",
       "Bash(timeout 3 bun:*)",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(gh repo create:*)",
+      "Bash(wc:*)",
+      "Bash(timeout 5 bun run:*)"
+    ],
+    "additionalDirectories": [
+      "/Users/tyler/Desktop/notes/Projects/Skills Discovery"
     ]
   }
 }

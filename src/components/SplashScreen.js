@@ -105,19 +105,21 @@ const SplashScreen = ({ onContinue }) => {
     if (!typewriterComplete || animStarted.current) return;
     animStarted.current = true;
 
-    // Phase 1: Clawd appears immediately
+    // Phase 1: DISCOVERY starts typing immediately after SKILLS
     setAnimPhase(1);
     setPhase1StartFrame(frame);
-    setClawdState(CLAWD_STATES.SCUTTLING);
 
-    // Phase 2: DISCOVERY starts typing immediately after SKILLS
-    setTimeout(() => setAnimPhase(2), 100);
+    // Phase 2: Clawd appears after DISCOVERY starts
+    setTimeout(() => {
+      setAnimPhase(2);
+      setClawdState(CLAWD_STATES.SCUTTLING);
+    }, 700);
 
-    // Phase 3: Subtitle appears after 1600ms
-    setTimeout(() => setAnimPhase(3), 1600);
+    // Phase 3: Subtitle appears after 1900ms
+    setTimeout(() => setAnimPhase(3), 1900);
 
-    // Phase 4: "Press Enter" appears after 3000ms
-    setTimeout(() => setAnimPhase(4), 3000);
+    // Phase 4: "Press Enter" appears after 3300ms
+    setTimeout(() => setAnimPhase(4), 3300);
   }, [typewriterComplete]);
 
   // Track when phases start for typewriter effects
@@ -371,14 +373,14 @@ const SplashScreen = ({ onContinue }) => {
 
   // Render DISCOVERY with shimmer sparkles
   const renderDiscovery = () => {
-    if (animPhase < 2) return null; // Only show after phase 2
+    if (animPhase < 1) return null; // Only show after phase 1
 
     // Wide letter-spacing
     const fullWord = 'D I S C O V E R Y';
 
     // Typewriter effect - reveal characters over time
-    const framesSincePhase2 = phase2StartFrame !== null ? frame - phase2StartFrame : 0;
-    const charsToReveal = Math.min(Math.floor(framesSincePhase2 * 2), fullWord.length); // 2 chars per frame
+    const framesSincePhase1 = phase1StartFrame !== null ? frame - phase1StartFrame : 0;
+    const charsToReveal = Math.min(Math.floor(framesSincePhase1 * 2), fullWord.length); // 2 chars per frame
     const word = fullWord.substring(0, charsToReveal);
     const isTyping = charsToReveal < fullWord.length;
 
@@ -431,10 +433,10 @@ const SplashScreen = ({ onContinue }) => {
   // Press Enter visible after phase 4
   const pressEnterVisible = animPhase >= 4;
 
-  // Underline starts growing after Clawd appears (phase 1)
-  const underlineVisible = animPhase >= 1;
-  const framesSincePhase1 = phase1StartFrame !== null ? frame - phase1StartFrame : 0;
-  const underlineLength = Math.min(Math.floor(framesSincePhase1 * 2), 46); // Grows 2 chars per frame
+  // Underline starts growing after Clawd appears (phase 2)
+  const underlineVisible = animPhase >= 2;
+  const framesSincePhase2 = phase2StartFrame !== null ? frame - phase2StartFrame : 0;
+  const underlineLength = Math.min(Math.floor(framesSincePhase2 * 2), 46); // Grows 2 chars per frame
   const underlineColor = colorTransition > 0
     ? interpolateColor(colors.header, '#81D4FA', colorTransition)
     : colors.header;
