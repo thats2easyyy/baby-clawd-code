@@ -18,10 +18,14 @@ import SkillDetailView, { SKILL_DETAIL_ACTIONS } from './views/SkillDetailView.j
 import CategoryDetailView, { getCategorySkillCount, getCategorySkillAtIndex } from './views/CategoryDetailView.js';
 import CreatorDetailView, { getCreatorSkillCount, getCreatorSkillAtIndex } from './views/CreatorDetailView.js';
 
+// Splash screen
+import SplashScreen from './components/SplashScreen.js';
+
 import { colors } from './theme.js';
 
 // View modes
 const MODES = {
+  SPLASH: 'splash',             // Animated intro screen
   INITIAL: 'initial',           // Empty input, waiting for /command
   COMMAND_MENU: 'command_menu', // Showing slash command menu
   SKILLS: 'skills',             // In skills discovery (tabs)
@@ -36,7 +40,7 @@ const App = () => {
   const { exit } = useApp();
 
   // Core state
-  const [mode, setMode] = useState(MODES.INITIAL);
+  const [mode, setMode] = useState(MODES.SPLASH);
   const [inputValue, setInputValue] = useState('');
 
   // Command menu state
@@ -93,6 +97,14 @@ const App = () => {
 
   // Handle keyboard input
   useInput((input, key) => {
+    // Splash screen handles its own input (except Ctrl+C)
+    if (mode === MODES.SPLASH) {
+      // Only allow Ctrl+C to fall through for exit handling
+      if (!(input === 'c' && key.ctrl)) {
+        return;
+      }
+    }
+
     // Handle Ctrl+C for exit
     if (input === 'c' && key.ctrl) {
       if (showExitHint) {
@@ -373,6 +385,11 @@ const App = () => {
       default: return 'detail';
     }
   };
+
+  // Render splash screen
+  if (mode === MODES.SPLASH) {
+    return <SplashScreen onContinue={() => setMode(MODES.INITIAL)} />;
+  }
 
   return (
     <Box flexDirection="column">

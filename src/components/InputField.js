@@ -1,10 +1,13 @@
 import React from 'react';
-import { Box, Text } from 'ink';
+import { Box, Text, useStdout } from 'ink';
 import { colors } from '../theme.js';
 
 const InputField = ({ value, showCursor = true }) => {
+  const { stdout } = useStdout();
+  const terminalWidth = stdout?.columns || 80;
+
   // Create horizontal line that spans terminal width
-  const line = '─'.repeat(60);
+  const line = '─'.repeat(terminalWidth - 2);
 
   return (
     <Box flexDirection="column">
