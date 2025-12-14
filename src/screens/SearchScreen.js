@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Text, useInput } from 'ink';
 import SelectList from '../components/SelectList.js';
 import { colors } from '../theme.js';
 import { searchSkills } from '../data/index.js';
 import { SCREENS } from '../App.js';
 
-const SearchScreen = ({ navigate }) => {
+const SearchScreen = ({ navigate, onQueryChange }) => {
   const [query, setQuery] = useState('');
   const results = query ? searchSkills(query) : [];
+
+  // Notify parent of query changes for the command input display
+  useEffect(() => {
+    onQueryChange?.(query);
+    return () => onQueryChange?.('');
+  }, [query, onQueryChange]);
 
   useInput((input, key) => {
     if (key.backspace || key.delete) {
