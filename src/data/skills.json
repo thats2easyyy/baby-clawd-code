@@ -5,7 +5,12 @@
     "category": "Browser & Testing",
     "description": "Browser automation plugin that lets Claude control your web browser. Test and verify as you develop.",
     "installs": 730,
-    "installCommand": "/plugin marketplace add SawyerHood/dev-browser"
+    "installCommand": "/plugin marketplace add SawyerHood/dev-browser",
+    "difficulty": "intermediate",
+    "goodFor": ["Frontend devs", "QA engineers", "Automation"],
+    "examplePrompt": "Use dev-browser to screenshot example.com",
+    "isBuiltIn": false,
+    "trending": true
   },
   {
     "name": "python-development",
@@ -13,7 +18,12 @@
     "category": "Development",
     "description": "Python development with 3 specialized agents and 5 skills. Scaffolding, async patterns, testing.",
     "installs": 412,
-    "installCommand": "/plugin install python-development@wshobson/agents"
+    "installCommand": "/plugin install python-development@wshobson/agents",
+    "difficulty": "intermediate",
+    "goodFor": ["Python devs", "Backend engineers", "Data scientists"],
+    "examplePrompt": "Set up a new Python project with async support",
+    "isBuiltIn": false,
+    "trending": false
   },
   {
     "name": "kubernetes-operations",
@@ -21,7 +31,12 @@
     "category": "DevOps",
     "description": "K8s architect agent with 4 deployment skills. Production-grade Helm charts and GitOps.",
     "installs": 289,
-    "installCommand": "/plugin install kubernetes-operations@wshobson/agents"
+    "installCommand": "/plugin install kubernetes-operations@wshobson/agents",
+    "difficulty": "advanced",
+    "goodFor": ["DevOps", "SREs", "Platform engineers"],
+    "examplePrompt": "Create a Helm chart for my Node.js app",
+    "isBuiltIn": false,
+    "trending": false
   },
   {
     "name": "skill-creator",
@@ -29,7 +44,12 @@
     "category": "Meta",
     "description": "Interactive guide for creating new skills. Claude asks about your workflow and generates the structure.",
     "installs": 1024,
-    "installCommand": "/plugin install skill-creator@anthropics/skills"
+    "installCommand": "/plugin install skill-creator@anthropics/skills",
+    "difficulty": "beginner",
+    "goodFor": ["Skill authors", "Power users", "Developers"],
+    "examplePrompt": "Help me create a skill for code review",
+    "isBuiltIn": true,
+    "trending": true
   },
   {
     "name": "mcp-builder",
@@ -37,7 +57,12 @@
     "category": "Development",
     "description": "Guide for creating MCP servers to integrate external APIs and services with Claude Code.",
     "installs": 876,
-    "installCommand": "/plugin install mcp-builder@anthropics/skills"
+    "installCommand": "/plugin install mcp-builder@anthropics/skills",
+    "difficulty": "advanced",
+    "goodFor": ["Developers", "Integrators", "API builders"],
+    "examplePrompt": "Build an MCP server for my weather API",
+    "isBuiltIn": true,
+    "trending": false
   },
   {
     "name": "devops-automation-pack",
@@ -45,7 +70,12 @@
     "category": "DevOps",
     "description": "Complete DevOps toolkit with CI/CD, deployment automation, and infrastructure management.",
     "installs": 534,
-    "installCommand": "/plugin install devops-automation-pack@claude-code-plugins-plus"
+    "installCommand": "/plugin install devops-automation-pack@claude-code-plugins-plus",
+    "difficulty": "intermediate",
+    "goodFor": ["DevOps", "SREs", "Automation"],
+    "examplePrompt": "Set up a GitHub Actions CI/CD pipeline",
+    "isBuiltIn": false,
+    "trending": false
   },
   {
     "name": "superpowers",
@@ -53,7 +83,12 @@
     "category": "Workflow",
     "description": "20+ battle-tested skills including TDD, debugging, and collaboration patterns. /brainstorm, /write-plan, /execute-plan.",
     "installs": 445,
-    "installCommand": "/plugin marketplace add obra/superpowers-marketplace"
+    "installCommand": "/plugin marketplace add obra/superpowers-marketplace",
+    "difficulty": "beginner",
+    "goodFor": ["Everyone", "Teams", "Productivity"],
+    "examplePrompt": "Use /brainstorm to generate ideas for my feature",
+    "isBuiltIn": false,
+    "trending": true
   },
   {
     "name": "webapp-testing",
@@ -61,7 +96,12 @@
     "category": "Browser & Testing",
     "description": "Test local web applications using Playwright for UI verification and debugging.",
     "installs": 612,
-    "installCommand": "/plugin install webapp-testing@anthropics/skills"
+    "installCommand": "/plugin install webapp-testing@anthropics/skills",
+    "difficulty": "intermediate",
+    "goodFor": ["Frontend devs", "QA engineers", "Full-stack devs"],
+    "examplePrompt": "Test the login flow on localhost:3000",
+    "isBuiltIn": true,
+    "trending": false
   },
   {
     "name": "docx",
@@ -69,7 +109,51 @@
     "category": "Documents",
     "description": "Create, edit, and analyze Word documents with tracked changes, comments, and formatting.",
     "installs": 2341,
-    "installCommand": "/plugin install document-skills@anthropics/skills"
+    "installCommand": "/plugin install document-skills@anthropics/skills",
+    "difficulty": "beginner",
+    "goodFor": ["Everyone", "Business users", "Writers"],
+    "examplePrompt": "Create a Word document with my meeting notes",
+    "isBuiltIn": true,
+    "trending": false
+  },
+  {
+    "name": "xlsx",
+    "creator": "anthropic",
+    "category": "Documents",
+    "description": "Create and edit Excel spreadsheets with formulas, charts, and formatting.",
+    "installs": 1856,
+    "installCommand": "/plugin install document-skills@anthropics/skills",
+    "difficulty": "beginner",
+    "goodFor": ["Analysts", "Business users", "Non-coders"],
+    "examplePrompt": "Create a spreadsheet tracking monthly expenses",
+    "isBuiltIn": true,
+    "trending": false
+  },
+  {
+    "name": "pptx",
+    "creator": "anthropic",
+    "category": "Documents",
+    "description": "Create presentations with slides, layouts, and speaker notes.",
+    "installs": 1432,
+    "installCommand": "/plugin install document-skills@anthropics/skills",
+    "difficulty": "beginner",
+    "goodFor": ["Designers", "Presenters", "Business users"],
+    "examplePrompt": "Create a presentation about Q4 results",
+    "isBuiltIn": true,
+    "trending": false
+  },
+  {
+    "name": "pdf",
+    "creator": "anthropic",
+    "category": "Documents",
+    "description": "Create and read PDF documents with text, images, and formatting.",
+    "installs": 2105,
+    "installCommand": "/plugin install document-skills@anthropics/skills",
+    "difficulty": "beginner",
+    "goodFor": ["Everyone", "Document workflows"],
+    "examplePrompt": "Convert this markdown to a formatted PDF",
+    "isBuiltIn": true,
+    "trending": true
   },
   {
     "name": "git-commit-smart",
@@ -77,6 +161,11 @@
     "category": "Workflow",
     "description": "Never write commit messages again. AI-powered conventional commits with context awareness.",
     "installs": 389,
-    "installCommand": "/plugin install git-commit-smart@claude-code-plugins-plus"
+    "installCommand": "/plugin install git-commit-smart@claude-code-plugins-plus",
+    "difficulty": "beginner",
+    "goodFor": ["Developers", "Git users", "Productivity"],
+    "examplePrompt": "Commit my changes with a smart message",
+    "isBuiltIn": false,
+    "trending": false
   }
 ]

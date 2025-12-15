@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Text } from 'ink';
 import ListItem from '../components/ListItem.js';
 import { searchSkills } from '../data/index.js';
-import { colors } from '../theme.js';
+import { colors, categoryColors } from '../theme.js';
 
 const SearchTab = ({ selectedIndex, filter = '' }) => {
   // Search only shows results when there's a filter
@@ -33,6 +33,7 @@ const SearchTab = ({ selectedIndex, filter = '' }) => {
           description={skill.category}
           isSelected={index === selectedIndex}
           labelWidth={22}
+          descriptionColor={categoryColors[skill.category]}
         />
       ))}
     </Box>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Text } from 'ink';
 import ListItem from '../components/ListItem.js';
 import { getSkillsByCategory } from '../data/index.js';
-import { colors } from '../theme.js';
+import { colors, categoryColors } from '../theme.js';
 
 const CategoryDetailView = ({ category, selectedIndex = 0, filter = '' }) => {
   const allSkills = getSkillsByCategory(category);
@@ -26,7 +26,7 @@ const CategoryDetailView = ({ category, selectedIndex = 0, filter = '' }) => {
     <Box flexDirection="column" marginTop={1}>
       {/* Category header */}
       <Box marginBottom={1}>
-        <Text bold color={colors.header}>{category}</Text>
+        <Text bold color={categoryColors[category] || colors.header}>{category}</Text>
         <Text color={colors.secondary}> · {skills.length} skill{skills.length !== 1 ? 's' : ''}</Text>
       </Box>
 

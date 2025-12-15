@@ -8,6 +8,23 @@ export const colors = {
   error: '#FF5252',       // Red for errors
 };
 
+// Category colors for skill classification
+export const categoryColors = {
+  'Browser & Testing': '#81D4FA',  // cyan
+  'Development': '#4CAF50',        // green
+  'DevOps': '#FFD54F',             // yellow
+  'Documents': '#64B5F6',          // blue
+  'Workflow': '#CE93D8',           // magenta
+  'Meta': 'white',
+};
+
+// Difficulty colors
+export const difficultyColors = {
+  beginner: '#4CAF50',      // green
+  intermediate: '#FFD54F',  // yellow
+  advanced: '#FF5252',      // red
+};
+
 // Splash screen gradient colors (orange spectrum)
 export const splashGradient = [
   '#FF6B35',  // Bright orange

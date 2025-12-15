@@ -33,9 +33,15 @@ export const getSkillsByCreator = (handle) => {
   return skills.filter(s => s.creator === handle);
 };
 
-// Get skills sorted by installs (popular)
+// Get skills sorted by trending first, then by installs (popular)
 export const getPopularSkills = () => {
-  return [...skills].sort((a, b) => b.installs - a.installs);
+  return [...skills].sort((a, b) => {
+    // Trending first
+    if (a.trending && !b.trending) return -1;
+    if (!a.trending && b.trending) return 1;
+    // Then by installs
+    return b.installs - a.installs;
+  });
 };
 
 // Search skills by query (name + description)

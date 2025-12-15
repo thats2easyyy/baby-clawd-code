@@ -12,6 +12,7 @@ import PopularTab, { getPopularCount, getPopularSkillAtIndex } from './tabs/Popu
 import BrowseTab, { getBrowseCount, getCategoryAtIndex } from './tabs/BrowseTab.js';
 import SearchTab, { getSearchCount, getSearchSkillAtIndex } from './tabs/SearchTab.js';
 import CreatorsTab, { getCreatorsCount, getCreatorAtIndex } from './tabs/CreatorsTab.js';
+import LearnTab, { getLearnCount } from './tabs/LearnTab.js';
 
 // Views
 import SkillDetailView, { SKILL_DETAIL_ACTIONS } from './views/SkillDetailView.js';
@@ -34,7 +35,7 @@ const MODES = {
   CREATOR_DETAIL: 'creator',    // Viewing a creator's profile
 };
 
-const TABS = ['Popular', 'Browse', 'Search', 'Creators'];
+const TABS = ['Popular', 'Browse', 'Search', 'Creators', 'Learn'];
 
 const App = () => {
   const { exit } = useApp();
@@ -82,6 +83,7 @@ const App = () => {
       case 1: return getBrowseCount(filter);
       case 2: return getSearchCount(filter);
       case 3: return getCreatorsCount(filter);
+      case 4: return getLearnCount();
       default: return 0;
     }
   };
@@ -359,6 +361,7 @@ const App = () => {
             {activeTab === 1 && <BrowseTab selectedIndex={listIndex} filter={inputValue} />}
             {activeTab === 2 && <SearchTab selectedIndex={listIndex} filter={inputValue} />}
             {activeTab === 3 && <CreatorsTab selectedIndex={listIndex} filter={inputValue} />}
+            {activeTab === 4 && <LearnTab />}
           </>
         );
 

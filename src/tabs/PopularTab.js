@@ -1,7 +1,8 @@
 import React from 'react';
-import { Box } from 'ink';
+import { Box, Text } from 'ink';
 import ListItem from '../components/ListItem.js';
 import { getPopularSkills } from '../data/index.js';
+import { categoryColors } from '../theme.js';
 
 const PopularTab = ({ selectedIndex, filter = '' }) => {
   const allSkills = getPopularSkills();
@@ -26,11 +27,11 @@ const PopularTab = ({ selectedIndex, filter = '' }) => {
       {skills.map((skill, index) => (
         <ListItem
           key={skill.name}
-          label={skill.name}
+          label={skill.trending ? `🔥 ${skill.name}` : skill.name}
           description={`${skill.category} · ${formatInstalls(skill.installs)} installs`}
           isSelected={index === selectedIndex}
           prefix={`${index + 1}.`}
-          labelWidth={22}
+          labelWidth={25}
         />
       ))}
       {skills.length === 0 && filter && (

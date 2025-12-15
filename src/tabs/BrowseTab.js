@@ -2,6 +2,7 @@ import React from 'react';
 import { Box } from 'ink';
 import ListItem from '../components/ListItem.js';
 import { getCategories, getSkillsByCategory } from '../data/index.js';
+import { categoryColors } from '../theme.js';
 
 const BrowseTab = ({ selectedIndex, filter = '' }) => {
   const allCategories = getCategories();
@@ -24,6 +25,7 @@ const BrowseTab = ({ selectedIndex, filter = '' }) => {
             description={`${skillCount} skill${skillCount !== 1 ? 's' : ''}`}
             isSelected={index === selectedIndex}
             labelWidth={25}
+            labelColor={categoryColors[category]}
           />
         );
       })}
