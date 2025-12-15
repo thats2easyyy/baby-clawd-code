@@ -3,6 +3,7 @@ import { Box, Text } from 'ink';
 import ListItem from '../components/ListItem.js';
 import { searchSkills } from '../data/index.js';
 import { colors, categoryColors } from '../theme.js';
+import { CLAWD_CONFUSED, CLAWD_SEARCHING } from '../utils/asciiArt.js';
 
 const SearchTab = ({ selectedIndex, filter = '' }) => {
   // Search only shows results when there's a filter
@@ -10,16 +11,33 @@ const SearchTab = ({ selectedIndex, filter = '' }) => {
 
   if (!filter) {
     return (
-      <Box marginTop={1} marginLeft={2}>
-        <Text color={colors.secondary}>Type to search skills by name or description</Text>
+      <Box flexDirection="column" marginTop={1} marginLeft={2}>
+        <Box flexDirection="column">
+          {CLAWD_SEARCHING.map((line, i) => (
+            <Text key={i} color={colors.header}>{line}</Text>
+          ))}
+        </Box>
+        <Box marginTop={1}>
+          <Text color={colors.secondary}>Type to search skills by name or description</Text>
+        </Box>
       </Box>
     );
   }
 
   if (skills.length === 0) {
     return (
-      <Box marginTop={1} marginLeft={2}>
-        <Text color={colors.secondary}>No results for "{filter}"</Text>
+      <Box flexDirection="column" marginTop={1} marginLeft={2}>
+        <Box flexDirection="column">
+          {CLAWD_CONFUSED.map((line, i) => (
+            <Text key={i} color={colors.header}>{line}</Text>
+          ))}
+        </Box>
+        <Box marginTop={1}>
+          <Text color={colors.secondary}>No skills found for "</Text>
+          <Text color={colors.selected}>{filter}</Text>
+          <Text color={colors.secondary}>"</Text>
+        </Box>
+        <Text dimColor>Try a different search term</Text>
       </Box>
     );
   }

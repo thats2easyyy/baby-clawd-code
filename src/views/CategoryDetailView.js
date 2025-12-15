@@ -3,6 +3,7 @@ import { Box, Text } from 'ink';
 import ListItem from '../components/ListItem.js';
 import { getSkillsByCategory } from '../data/index.js';
 import { colors, categoryColors } from '../theme.js';
+import { CATEGORY_ICONS } from '../utils/asciiArt.js';
 
 const CategoryDetailView = ({ category, selectedIndex = 0, filter = '' }) => {
   const allSkills = getSkillsByCategory(category);
@@ -26,6 +27,7 @@ const CategoryDetailView = ({ category, selectedIndex = 0, filter = '' }) => {
     <Box flexDirection="column" marginTop={1}>
       {/* Category header */}
       <Box marginBottom={1}>
+        <Text color={categoryColors[category] || colors.header}>{CATEGORY_ICONS[category] || '▸'} </Text>
         <Text bold color={categoryColors[category] || colors.header}>{category}</Text>
         <Text color={colors.secondary}> · {skills.length} skill{skills.length !== 1 ? 's' : ''}</Text>
       </Box>

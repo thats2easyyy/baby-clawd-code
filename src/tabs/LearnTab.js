@@ -1,13 +1,15 @@
 import React from 'react';
 import { Box, Text } from 'ink';
 import { colors } from '../theme.js';
+import { SECTION_DIVIDER, SECTION_HEADER } from '../utils/asciiArt.js';
 
 const LearnTab = () => {
   return (
     <Box flexDirection="column" marginTop={1}>
       {/* What's a skill? */}
+      <Text dimColor>{SECTION_DIVIDER}</Text>
       <Box marginBottom={1}>
-        <Text bold color={colors.header}>What's a skill?</Text>
+        <Text bold color={colors.header}>{SECTION_HEADER("What's a skill?")}</Text>
       </Box>
       <Box marginBottom={1}>
         <Text color={colors.primary}>
@@ -17,8 +19,9 @@ const LearnTab = () => {
       </Box>
 
       {/* Built-in skills */}
+      <Text dimColor>{SECTION_DIVIDER}</Text>
       <Box marginBottom={1}>
-        <Text bold color={colors.header}>Built-in skills:</Text>
+        <Text bold color={colors.header}>{SECTION_HEADER("Built-in skills")}</Text>
       </Box>
       <Box flexDirection="column" marginBottom={1}>
         <Box>
@@ -52,8 +55,9 @@ const LearnTab = () => {
       </Box>
 
       {/* How to invoke */}
+      <Text dimColor>{SECTION_DIVIDER}</Text>
       <Box marginBottom={1}>
-        <Text bold color={colors.header}>How to invoke:</Text>
+        <Text bold color={colors.header}>{SECTION_HEADER("How to invoke")}</Text>
       </Box>
       <Box marginBottom={1}>
         <Text color={colors.primary}>
@@ -66,8 +70,9 @@ const LearnTab = () => {
       </Box>
 
       {/* Glossary */}
+      <Text dimColor>{SECTION_DIVIDER}</Text>
       <Box marginBottom={1}>
-        <Text bold color={colors.header}>Skill vs Hook vs Subagent vs Plugin:</Text>
+        <Text bold color={colors.header}>{SECTION_HEADER("Glossary")}</Text>
       </Box>
       <Box flexDirection="column">
         <Box>

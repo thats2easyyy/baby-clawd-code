@@ -129,3 +129,38 @@ export const buildClawd = (expression = 'scared', legFrame = 0, armsExtended = f
     legs,
   ];
 };
+
+// ============================================
+// Additional Clawd Expressions
+// ============================================
+
+// Clawd searching (waiting for input)
+export const CLAWD_SEARCHING = [
+  '   ▐▛███▜▌ ...',
+  '  ▝▜█████▛▘   ',
+  '    ▘▘ ▝▝     ',
+];
+
+// Clawd confused/no results
+export const CLAWD_CONFUSED = [
+  ' ? ▐▛███▜▌ ? ',
+  '  ▝▜█████▛▘  ',
+  '    ▘▘ ▝▝    ',
+];
+
+// ============================================
+// Category Icons & Decorations
+// ============================================
+
+export const CATEGORY_ICONS = {
+  'Browser & Testing': '◉',
+  'Development': '⌘',
+  'DevOps': '⚙',
+  'Documents': '☰',
+  'Workflow': '▸',
+  'Meta': '✧',
+};
+
+// Section dividers for visual hierarchy
+export const SECTION_DIVIDER = '─────────────────────────────────────';
+export const SECTION_HEADER = (text) => `▸ ${text}`;

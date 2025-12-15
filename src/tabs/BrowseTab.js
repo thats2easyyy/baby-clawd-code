@@ -3,6 +3,7 @@ import { Box } from 'ink';
 import ListItem from '../components/ListItem.js';
 import { getCategories, getSkillsByCategory } from '../data/index.js';
 import { categoryColors } from '../theme.js';
+import { CATEGORY_ICONS } from '../utils/asciiArt.js';
 
 const BrowseTab = ({ selectedIndex, filter = '' }) => {
   const allCategories = getCategories();
@@ -18,13 +19,14 @@ const BrowseTab = ({ selectedIndex, filter = '' }) => {
     <Box flexDirection="column" marginTop={1}>
       {categories.map((category, index) => {
         const skillCount = getSkillsByCategory(category).length;
+        const icon = CATEGORY_ICONS[category] || '▸';
         return (
           <ListItem
             key={category}
-            label={category}
+            label={`${icon} ${category}`}
             description={`${skillCount} skill${skillCount !== 1 ? 's' : ''}`}
             isSelected={index === selectedIndex}
-            labelWidth={25}
+            labelWidth={27}
             labelColor={categoryColors[category]}
           />
         );
