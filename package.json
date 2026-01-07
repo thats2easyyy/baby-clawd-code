@@ -8,7 +8,8 @@
     "test": "bun test",
     "sidebar": "bun run src/sidebar/cli.js",
     "sidebar:spawn": "bun run src/sidebar/cli.js spawn",
-    "sidebar:demo": "bun run src/sidebar/cli.js demo"
+    "sidebar:demo": "bun run src/sidebar/cli.js demo",
+    "sidebar:task": "bun run src/sidebar/get-selected-task.js"
   },
   "devDependencies": {
     "@types/bun": "latest",
