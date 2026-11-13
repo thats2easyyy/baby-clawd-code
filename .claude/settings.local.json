@@ -12,7 +12,8 @@
       "Bash(git commit:*)",
       "Bash(gh repo create:*)",
       "Bash(wc:*)",
-      "Bash(timeout 5 bun run:*)"
+      "Bash(timeout 5 bun run:*)",
+      "Skill(atomic-plans)"
     ],
     "additionalDirectories": [
       "/Users/tyler/Desktop/notes/Projects/Skills Discovery"
